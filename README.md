@@ -1,16 +1,48 @@
-# React + Vite
+# 📰 News Headlines Reader
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, responsive React application built to fetch, filter, and track the latest top news headlines. This project was developed as part of a comprehensive React course to demonstrate proficiency in functional components, state management, side effects, and modern CSS frameworks.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Real-Time Data Fetching:** Integrates with [NewsAPI](https://newsapi.org/) to pull the latest headlines dynamically.
+* **Category Filtering:** Users can seamlessly filter news by categories like Business, Technology, Entertainment, Sports, and Science.
+* **Interactive UI:** Clickable headlines expand to reveal detailed article descriptions before redirecting to the full source.
+* **Read Tracking:** A "Mark as Read" feature visually updates the UI (strike-through text, grayed-out images) and maintains a dynamic count of read articles vs. total articles.
+* **Dark Mode Support:** A fully integrated dark theme toggle for a better user experience in low-light environments.
+* **Responsive Design:** Mobile-first styling ensures the app looks great on devices of all sizes.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend Library:** React (Hooks: `useState`, `useEffect`)
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS
+* **HTTP Client:** Axios
+* **API:** NewsAPI
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these instructions to set up and run the project on your local machine.
+
+### Prerequisites
+* Node.js installed on your machine.
+* A free API key from [NewsAPI.org](https://newsapi.org/register).
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/vimalyad/news-headlines-reader.git](https://github.com/vimalyad/news-headlines-reader.git)
+   cd news-headlines-reader
+
+2. Install Dependencies : npm install
+   
+3. Set up Environment Variables:
+  
+4. Create a .env file in the root directory of the project.
+  
+5. Add your NewsAPI key to the file:
+  
+  Code snippet
+  VITE_API_KEY=your_actual_api_key_here
+  Start the development server: npm run dev
+  The app will typically be running at http://localhost:5173.
