@@ -14,12 +14,7 @@ export default function NewsItem({
 
   return (
     <article
-      className={`p-5 rounded-2xl shadow-sm border transition-all duration-200
-        {/* TODO: 3. Write a ternary operator here. 
-            If isRead is true: 'bg-slate-100 border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/50 opacity-75' 
-            If false: 'bg-white border-slate-200 hover:shadow-md hover:border-indigo-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:border-indigo-500/50' 
-        */}
-      `}
+      className={`p-5 rounded-2xl shadow-sm border transition-all duration-200 ${isRead ? 'bg-slate-100 border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/50 opacity-75' : 'bg-white border-slate-200 hover:shadow-md hover:border-indigo-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:border-indigo-500/50'}`}
     >
       <div className="flex flex-col sm:flex-row gap-4">
 
@@ -35,11 +30,7 @@ export default function NewsItem({
           <div className="flex justify-between items-start gap-4">
             <h2
               onClick={onExpandToggle}
-              className={`text-lg sm:text-xl font-semibold cursor-pointer transition-colors
-                {/* TODO: 6. Add a ternary operator here. 
-                    If isRead is true: 'line-through text-slate-500 dark:text-slate-400' 
-                    If false: 'text-slate-800 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400' 
-                */}
+              className={`text-lg sm:text-xl font-semibold cursor-pointer transition-colors ${isRead ? 'line-through text-slate-500 dark:text-slate-400' : 'text-slate-800 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400'} 
               `}
             >
               {article.title}
