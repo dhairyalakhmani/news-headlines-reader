@@ -67,7 +67,7 @@ function App() {
               Read: {readArticleIds.length} / {articles.length}
             </span>
             <button 
-              className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-xl"
+              className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-xl border"
               onClick={handleDarkMode}
             > 
                 {isDarkMode ? "☀️" : "🌙"}
