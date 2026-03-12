@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NewsItem from './components/NewsItem';
-
+import SearchBar from './components/SearchBar';
 const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 function App() {
@@ -10,12 +10,13 @@ function App() {
   const [readArticleIds, setReadArticleIds] = useState([]);
   const [expandedArticleUrl, setExpandedArticleUrl] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [searchQuery, setSearchQuery] = useState("");
+  const [submittedQuery, setSubmittedQuery] = useState("");
   useEffect(() => { 
     const fetchNews = async () => {
       try {
         console.log("my api key : ", VITE_API_KEY)
-        const URL = `https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=${VITE_API_KEY}`;
+        const URL = `https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&q=${searchQuery}&apiKey=${VITE_API_KEY}`;
         const response = await axios.get(URL);
         console.log(response.data.articles)
         setArticles(response.data.articles || []);
@@ -24,7 +25,7 @@ function App() {
       }
     };
     fetchNews();
-  }, [selectedCategory]);
+  }, [selectedCategory, submittedQuery]);
 
   const handleCategoryClick = category => {
     setSelectedCategory(category.toLowerCase());
@@ -44,6 +45,13 @@ function App() {
     setIsDarkMode(isDarkMode => !isDarkMode);
     document.documentElement.classList.toggle('dark');
   };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log("Searching for: ", searchQuery);
+    setSubmittedQuery(searchQuery);
+
+  }
 
   const categories = ['General', 'Business', 'Technology', 'Entertainment', 'Sports', 'Science'];
 
@@ -67,8 +75,12 @@ function App() {
           </div>
         </div>
       </header>
-
       <main className="max-w-4xl mx-auto px-4 py-8">
+        <SearchBar 
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          handleSearch={handleSearchSubmit}
+        />
         <div className="flex flex-wrap gap-2 mb-8">
           {categories.map((category) => (
             <button
