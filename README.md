@@ -31,7 +31,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/vimalyad/news-headlines-reader.git](https://github.com/vimalyad/news-headlines-reader.git)
+   git clone [https://github.com/dhairyalakhmani/news-headlines-reader.git](https://github.com/dhairyalakhmani/news-headlines-reader.git)
    cd news-headlines-reader
 
 2. Install Dependencies : npm install
